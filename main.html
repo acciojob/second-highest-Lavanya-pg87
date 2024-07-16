@@ -22,6 +22,36 @@
 			alert(secondHighest(arr));
 		}
 		Main();
+	<script>
+		function secondHighest(arr) {
+			//Write your code here
+			arr.sort((a, b) => b - a);
+
+			// Initialize secondHighest with -Infinity
+			let secondHighest = -Infinity;
+
+			// Loop through the array
+			for (let i = 0; i < arr.length; i++) {
+				// If the current element is not equal to the first element (highest)
+				if (arr[i] !== arr[0]) {
+					// Update secondHighest with the current element
+					secondHighest = arr[i];
+					break;
+				}
+			}
+			// Return secondHighest
+			return secondHighest;
+		}
+
+		function Main() {
+			var n = prompt("Enter the number of elements");
+			var arr = [];
+			for (var i = 0; i < n; i++) {
+				arr[i] = prompt("Enter element " + (i+1));
+			}
+			alert(secondHighest(arr));
+		}
+		Main();
 	</script>
 
     <script type="text/javascript" src="./script.js">
